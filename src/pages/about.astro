@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="sobre Mi | Geraldine Valencia Arce" description="sobre Mi JGeraldine Valencia Arce">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="Sobre Mí"
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/fb1f87d4-3317-434a-b2f6-3fa9f84b75c9.jpeg"
+					alt="Jeanine White at work with a colleague"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">perfil profesional</h2>
+				<div class="content">
+					<p>
+						Estudiante de Administración de
+						Negocios con pasión por la creación de contenido y las redes sociales.
+						Experiencia en atención al cliente como anfitriona, destacándome por mi comunicación efectiva y trato amable.
+						Busco oportunidades donde pueda combinar mis habilidades organizativas, creatividad digital y enfoque al cliente para aportar valor en entornos dinámicos.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Educacion</h2>
+				<div class="content">
+					<p>Universidad Católica San Pablo (2021- actualidad).</p>
+					<p>Colegio Lord Kelvin (2009-2020)</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Habilidades clave</h2>
+				<div class="content">
+					<p>Gestión de redes, creación de contenido, servicio al cliente, organización.</p>
+				</div>
+			</section>
+		</main>
+	</div>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
